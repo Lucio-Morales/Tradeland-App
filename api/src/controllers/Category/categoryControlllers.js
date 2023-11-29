@@ -1,5 +1,6 @@
 const { categoryServices } = require("../../services");
 
+// Crea una categoria
 const postCategory = async (req, res) => {
   try {
     const { name } = req.body;

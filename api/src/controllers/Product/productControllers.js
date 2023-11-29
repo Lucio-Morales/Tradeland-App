@@ -1,15 +1,21 @@
 const { productServices } = require("../../services");
 
+// Crea un producto
 const postProduct = async (req, res) => {
   try {
-    const { name, category, price } = req.body;
-    const response = await productServices.createProduct(name, category, price);
+    const { name, categoryName, price } = req.body;
+    const response = await productServices.createProduct(
+      name,
+      categoryName,
+      price
+    );
     res.status(200).json(response);
   } catch (error) {
     res.status(404).json({ error: error.message });
   }
 };
 
+// Busca todos los productos de la base de datos
 const getAllProducts = async (req, res) => {
   try {
     const response = await productServices.searchAllProducts();
@@ -19,6 +25,7 @@ const getAllProducts = async (req, res) => {
   }
 };
 
+// Busca un producto por id
 const getProduct = async (req, res) => {
   try {
     const { id } = req.params;
@@ -29,6 +36,7 @@ const getProduct = async (req, res) => {
   }
 };
 
+// Modifica un producto
 const putProduct = async (req, res) => {
   try {
     const { id } = req.params;
@@ -40,6 +48,7 @@ const putProduct = async (req, res) => {
   }
 };
 
+// Elimina un producto de la base de datos
 const deleteProduct = async (req, res) => {
   try {
     const { id } = req.params;

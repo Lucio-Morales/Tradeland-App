@@ -1,5 +1,6 @@
 const { buyerServices } = require("../../services");
 
+// Crea un buyer
 const postBuyer = async (req, res) => {
   try {
     const { name, email } = req.body;
@@ -10,6 +11,7 @@ const postBuyer = async (req, res) => {
   }
 };
 
+// Busca un buyer por id
 const getOneBuyer = async (req, res) => {
   try {
     const { id } = req.params;

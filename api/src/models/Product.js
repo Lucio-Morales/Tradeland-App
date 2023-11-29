@@ -14,10 +14,6 @@ module.exports = (sequelize) => {
         unique: true,
         allowNull: false,
       },
-      category: {
-        type: DataTypes.STRING,
-        allowNull: false,
-      },
       price: {
         type: DataTypes.STRING,
         allowNull: false,
