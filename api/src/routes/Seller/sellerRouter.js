@@ -4,7 +4,7 @@ const { sellerControllers } = require("../../controllers");
 const sellerRouter = Router();
 
 sellerRouter
-  .post("/create", sellerControllers.postSeller)
+  .post("/register", sellerControllers.postSeller)
   .get("/:id", sellerControllers.getOneSeller);
 
 module.exports = sellerRouter;

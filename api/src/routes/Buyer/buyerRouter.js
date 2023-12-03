@@ -3,7 +3,8 @@ const { buyerControllers } = require("../../controllers");
 
 const buyerRouter = Router();
 
-buyerRouter.post("/create", buyerControllers.postBuyer);
-buyerRouter.get("/:id", buyerControllers.getOneBuyer);
+buyerRouter
+  .post("/register", buyerControllers.postBuyer)
+  .get("/:id", buyerControllers.getOneBuyer);
 
 module.exports = buyerRouter;

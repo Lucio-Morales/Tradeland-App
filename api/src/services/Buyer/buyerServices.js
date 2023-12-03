@@ -1,7 +1,7 @@
 const { Buyer } = require("../../db");
 
-const createBuyer = async (name, email) => {
-  const buyer = await Buyer.create({ name, email });
+const createBuyer = async (name, email, password) => {
+  const buyer = await Buyer.create({ name, email, password });
   if (buyer) return { msg: "Registro del buyer exitoso", buyer };
 };
 

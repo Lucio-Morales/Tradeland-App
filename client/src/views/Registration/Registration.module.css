@@ -1,0 +1,93 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.form {
+  width: 300px;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.input {
+  width: 100%;
+  margin-bottom: 10px;
+  padding: 8px;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.error {
+  color: #ff0000;
+  font-size: 12px;
+  margin-top: -10px;
+  margin-bottom: 10px;
+}
+
+.button {
+  background-color: #4caf50;
+  color: #fff;
+  padding: 10px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  width: 100%;
+}
+
+.button:hover {
+  background-color: #45a049;
+}
+
+/* .registration_container {
+  text-align: center;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+} */
+.registration_container {
+  text-align: center;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+
+  /* Nuevos estilos para centrar y hacer cuadrado el contenedor */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  max-width: 400px; /* O ajusta según tus preferencias */
+  width: 100%;
+}
+
+.registration_message {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.registration_button {
+  margin-right: 10px;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  border: none;
+  border-radius: 4px;
+  background-color: #e74c3c;
+  color: #fff;
+}
+
+.registration_button_buyer {
+  background-color: #3498db;
+  color: #fff;
+}
+
+.registration_button_seller {
+  background-color: #e74c3c;
+  color: #fff;
+}

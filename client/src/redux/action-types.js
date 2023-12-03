@@ -1,1 +1,3 @@
 export const ALL_PRODUCTS = "ALL_PRODUCTS";
+export const USER_REGISTER = "USER_REGISTER";
+// export const REGISTER_BUYER = "REGISTER_BUYER";

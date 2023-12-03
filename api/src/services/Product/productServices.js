@@ -14,7 +14,7 @@ const createProduct = async (name, categoryName, price) => {
 
 const searchAllProducts = async () => {
   const products = await Product.findAll();
-  console.log(products);
+
   if (products) return products;
 };
 
