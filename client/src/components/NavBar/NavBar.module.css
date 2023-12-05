@@ -7,6 +7,57 @@
   color: white;
 }
 
+/* Añadir estos estilos al final de tu archivo NavBar.module.css */
+
+.categoryButton {
+  position: relative;
+  background-color: #555;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  cursor: pointer;
+  font-size: 16px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.categoryButton:hover {
+  background-color: #777;
+}
+
+.categoryMenu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 200px;
+  background-color: #555;
+  border-radius: 5px;
+  overflow: hidden;
+  display: none;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.categoryButton:hover .categoryMenu {
+  display: block;
+}
+
+.categoryMenu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.categoryMenu li {
+  padding: 10px;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.categoryMenu li:hover {
+  background-color: #777;
+}
+
 .buttons {
   display: flex;
   gap: 20px;

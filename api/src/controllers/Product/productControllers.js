@@ -16,9 +16,13 @@ const postProduct = async (req, res) => {
 };
 
 // Busca todos los productos de la base de datos
+// Si recibe una category por query, busca solo los productos asociados a esa category.
 const getAllProducts = async (req, res) => {
+  const { categoryId } = req.query;
   try {
-    const response = await productServices.searchAllProducts();
+    const response = categoryId
+      ? await productServices.searchByCategoryId(categoryId)
+      : await productServices.searchAllProducts();
     res.status(200).json(response);
   } catch (error) {
     res.status(404).json({ error: error.message });

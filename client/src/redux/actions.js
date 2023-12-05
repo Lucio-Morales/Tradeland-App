@@ -1,4 +1,8 @@
-import { ALL_PRODUCTS, USER_REGISTER } from "./action-types";
+import {
+  ALL_PRODUCTS,
+  PRODUCT_BY_CATEGORY,
+  USER_REGISTER,
+} from "./action-types";
 import axios from "axios";
 
 export const getAllProducts = () => {
@@ -6,6 +10,14 @@ export const getAllProducts = () => {
   return async (dispatch) => {
     const response = await axios.get(endPoint);
     dispatch({ type: ALL_PRODUCTS, payload: response.data });
+  };
+};
+
+export const getProductsByCategory = (categoryId) => {
+  const endPoint = `http://localhost:3001/product/all?categoryId=${categoryId}`;
+  return async (dispatch) => {
+    const response = await axios.get(endPoint);
+    dispatch({ type: PRODUCT_BY_CATEGORY, payload: response.data });
   };
 };
 

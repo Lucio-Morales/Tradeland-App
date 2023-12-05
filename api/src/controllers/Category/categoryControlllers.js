@@ -11,6 +11,17 @@ const postCategory = async (req, res) => {
   }
 };
 
+// Busca todas las categorias
+const getCategories = async (req, res) => {
+  try {
+    const response = await categoryServices.allCategories();
+    res.status(200).json(response);
+  } catch (error) {
+    res.status(404).json({ msg: error.message });
+  }
+};
+
 module.exports = {
   postCategory,
+  getCategories,
 };
