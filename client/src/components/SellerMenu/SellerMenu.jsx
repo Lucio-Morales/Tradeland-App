@@ -1,14 +1,20 @@
 import { Link } from "react-router-dom";
+import styles from "./SellerMenu.module.css";
 
-const SellerMenu = () => {
+const SellerMenu = ({ userId }) => {
+  console.log(userId);
   return (
-    <div>
+    <div className={styles.container}>
       <ul>
         <li>
-          <Link to="/createStore">Crear tienda</Link>
+          <Link className={styles.link} to={`/createStore/${userId}`}>
+            Crear tienda
+          </Link>
         </li>
         <li>
-          <Link to="/myStores">Mis tiendas</Link>
+          <Link className={styles.link} to="/myStores">
+            Mis tiendas
+          </Link>
         </li>
       </ul>
     </div>

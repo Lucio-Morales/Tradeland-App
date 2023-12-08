@@ -26,12 +26,13 @@ const Login = () => {
       );
 
       const data = response.data;
+      console.log(data.id);
       // setLoginResponse(data);
       if (data.access === true) {
         if (data.userType === "Buyer") {
-          navigate("/buyerDashboard");
+          navigate("/buyerDashboard", { state: { userId: data.id } });
         } else if (data.userType === "Seller") {
-          navigate("/sellerDashboard");
+          navigate("/sellerDashboard", { state: { userId: data.id } });
         }
       }
     } catch (error) {

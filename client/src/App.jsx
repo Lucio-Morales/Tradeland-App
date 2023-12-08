@@ -6,6 +6,7 @@ import Registration from "./views/Registration/Registration";
 import Login from "./views/Login/Login";
 import SellerDashboard from "./views/SellerDashboard/SellerDashboard";
 import BuyerDashboard from "./views/BuyerDashboard/BuyerDashboard";
+import CreateStore from "./views/CreateStore/CreateStore";
 
 function App() {
   const location = useLocation();
@@ -18,6 +19,7 @@ function App() {
         <Route path="/register" element={<Registration />} />
         <Route path="/login" element={<Login />} />
         <Route path="/sellerDashboard" element={<SellerDashboard />} />
+        <Route path="/createStore/:id" element={<CreateStore />} />
         <Route path="/buyerDashboard" element={<BuyerDashboard />} />
       </Routes>
     </div>

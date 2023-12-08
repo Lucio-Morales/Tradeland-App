@@ -1,0 +1,37 @@
+/* CreateStore.module.css */
+
+/* Estilos para el contenedor principal */
+.container {
+  max-width: 400px; /* Ancho máximo del formulario */
+  margin: 0 auto; /* Centra el formulario en el medio de la pantalla */
+  padding: 20px;
+  background-color: #f0f0f0;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra ligera */
+}
+
+/* Estilos para los campos de entrada */
+input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  box-sizing: border-box; /* Incluye el padding y border en el ancho total */
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+/* Estilos para el botón */
+button {
+  width: 100%;
+  padding: 10px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/* Estilos para el botón cuando está siendo hover (pasando el mouse sobre él) */
+button:hover {
+  background-color: #0056b3;
+}

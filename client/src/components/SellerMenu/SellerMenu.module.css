@@ -1,0 +1,35 @@
+/* SellerMenu.module.css */
+
+/* Estilos para el contenedor principal */
+.container {
+  display: flex; /* Utiliza flexbox para organizar los elementos */
+  flex-direction: column; /* Organiza los elementos en columnas */
+  padding: 20px;
+  background-color: #f0f0f0;
+  height: 100vh; /* Haz que el contenedor ocupe el 100% de la altura de la pantalla */
+  width: 200px; /* Ajusta el ancho del menú según tus necesidades */
+}
+
+/* Estilos para la lista no ordenada */
+ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* Estilos para cada ítem de la lista */
+li {
+  margin-bottom: 10px;
+}
+
+/* Estilos para los enlaces */
+a {
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+}
+
+/* Estilos cuando el enlace está siendo hover (pasando el mouse sobre él) */
+a:hover {
+  color: #007bff;
+}

@@ -8,7 +8,7 @@ const accessLogin = async (email, password) => {
     },
   });
   if (seller) {
-    return { access: true, userType: seller.type };
+    return { access: true, userType: seller.type, id: seller.id };
   } else {
     const buyer = await Buyer.findOne({
       where: {
@@ -17,7 +17,7 @@ const accessLogin = async (email, password) => {
       },
     });
     if (buyer) {
-      return { access: true, userType: buyer.type };
+      return { access: true, userType: buyer.type, id: buyer.id };
     }
   }
 
