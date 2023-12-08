@@ -1,7 +1,7 @@
 const { Seller } = require("../../db");
 
-const createSeller = async (name, email, password, rut) => {
-  const seller = await Seller.create({ name, email, password, rut });
+const createSeller = async (type, name, email, password) => {
+  const seller = await Seller.create({ type, name, email, password });
   if (seller) return { msg: "Seller creado con exito", seller };
 };
 

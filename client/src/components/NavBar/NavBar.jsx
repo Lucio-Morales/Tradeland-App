@@ -1,16 +1,16 @@
-import { Link } from "react-router-dom";
 import SearchBar from "../SearchBar/SearchBar";
 import styles from "./NavBar.module.css";
+import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
-import { getProductsByCategory } from "../../redux/actions";
+import { getAllProducts, getProductsByCategory } from "../../redux/actions";
 
 const NavBar = () => {
-  const [showCategories, setShowCategories] = useState(false);
-  const [allCategories, setAllCategories] = useState([]);
-
+  const [categories, setCategories] = useState({
+    allCategories: [],
+    showCategories: false,
+  });
   const dispatch = useDispatch();
-
   useEffect(() => {
     //Cuando se monta el componente NavBar se realiza una peticion al servidor
     //para obtener todas las categorias cargadas en la base de datos
@@ -18,36 +18,51 @@ const NavBar = () => {
       try {
         const response = await fetch("http://localhost:3001/category/all");
         const data = await response.json();
-        setAllCategories(data);
+        setCategories((prevCategories) => ({
+          ...prevCategories,
+          allCategories: data,
+        }));
       } catch (error) {
         console.error("Error al obtener categorías:", error);
       }
     };
     searchCategories();
   }, []);
-
   const handleCategoryClick = (selectedCategory) => {
     //Esta funcion recibe el id de la categoria seleccionada
     //y despacha una action pasandole ese id
     dispatch(getProductsByCategory(selectedCategory));
   };
-
+  const handleGetProducts = () => {
+    dispatch(getAllProducts());
+  };
   return (
     <div className={styles.container}>
       <SearchBar />
       <div className={styles.buttons}>
-        <button className={styles.button}>HOME</button>
-        <button className={styles.button}>PRODUCTS</button>
+        <button className={styles.button} onClick={handleGetProducts}>
+          HOME
+        </button>
         <div
           className={styles.categoryButton}
-          onMouseOver={() => setShowCategories(true)}
-          onMouseLeave={() => setShowCategories(false)}
+          onMouseOver={() =>
+            setCategories((prevCategories) => ({
+              ...prevCategories,
+              showCategories: true,
+            }))
+          }
+          onMouseLeave={() =>
+            setCategories((prevCategories) => ({
+              ...prevCategories,
+              showCategories: false,
+            }))
+          }
         >
           CATEGORIES
-          {showCategories && (
+          {categories.showCategories && (
             <div className={styles.categoryMenu}>
               <ul>
-                {allCategories.map((category) => (
+                {categories?.allCategories.map((category) => (
                   <li
                     key={category.id}
                     onClick={() => handleCategoryClick(category.id)}
@@ -61,6 +76,9 @@ const NavBar = () => {
         </div>
         <Link to="/register">
           <button className={styles.button}>REGISTER</button>
+        </Link>
+        <Link to="/login">
+          <button className={styles.button}>LOGIN</button>
         </Link>
       </div>
     </div>

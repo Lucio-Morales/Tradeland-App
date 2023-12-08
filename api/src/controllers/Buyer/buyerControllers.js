@@ -3,8 +3,13 @@ const { buyerServices } = require("../../services");
 // Crea un buyer
 const postBuyer = async (req, res) => {
   try {
-    const { name, email } = req.body;
-    const response = await buyerServices.createBuyer(name, email);
+    const { type, name, email, password } = req.body;
+    const response = await buyerServices.createBuyer(
+      type,
+      name,
+      email,
+      password
+    );
     res.status(200).json(response);
   } catch (error) {
     res.status(404).json({ error: error.message });

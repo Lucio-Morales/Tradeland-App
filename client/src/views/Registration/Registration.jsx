@@ -23,7 +23,6 @@ const Registration = () => {
     type: "",
     name: "",
     email: "",
-    rut: "",
     password: "",
   });
 
@@ -66,7 +65,6 @@ const Registration = () => {
       type: "",
       name: "",
       email: "",
-      rut: "",
       password: "",
     });
     setRegistrationPhase(2);
@@ -78,13 +76,13 @@ const Registration = () => {
         <div className={styles.registration_container}>
           <p className={styles.registrarion_message}>Registrarse como:</p>
           <button
-            onClick={() => handleUserType("buyer")}
+            onClick={() => handleUserType("Buyer")}
             className={styles.registration_button}
           >
             Buyer
           </button>
           <button
-            onClick={() => handleUserType("seller")}
+            onClick={() => handleUserType("Seller")}
             className={styles.registration_button}
           >
             Seller
@@ -95,7 +93,7 @@ const Registration = () => {
       {registrationPhase === 1 && (
         <div className={styles.container}>
           <form className={styles.form} onSubmit={handleSubmit}>
-            {userData.type === "buyer" && (
+            {userData.type === "Buyer" && (
               <>
                 <input
                   type="text"
@@ -130,7 +128,7 @@ const Registration = () => {
                 )}
               </>
             )}
-            {userData.type === "seller" && (
+            {userData.type === "Seller" && (
               <>
                 <input
                   type="text"
@@ -164,15 +162,6 @@ const Registration = () => {
                 {errors.password && (
                   <p className={styles.error}>{errors.password}</p>
                 )}
-                <input
-                  type="text"
-                  value={userData.rut}
-                  name="rut"
-                  onChange={handleChange}
-                  placeholder="Rut"
-                  className={styles.input}
-                />
-                {errors.rut && <p className={styles.error}>{errors.rut}</p>}
               </>
             )}
             <button className={styles.button}>Submit</button>

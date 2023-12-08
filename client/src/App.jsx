@@ -1,11 +1,11 @@
 import "./App.css";
 import { Routes, Route, useLocation } from "react-router-dom";
-// import Landing from "./views/Landing/Landing";
 import NavBar from "./components/NavBar/NavBar";
 import Home from "./views/Home/Home";
-// import RegisterBuyer from "./views/RegisterBuyer/RegisterBuyer";
 import Registration from "./views/Registration/Registration";
-import Carousel from "./components/Carousel/Carousel";
+import Login from "./views/Login/Login";
+import SellerDashboard from "./views/SellerDashboard/SellerDashboard";
+import BuyerDashboard from "./views/BuyerDashboard/BuyerDashboard";
 
 function App() {
   const location = useLocation();
@@ -16,6 +16,9 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/register" element={<Registration />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/sellerDashboard" element={<SellerDashboard />} />
+        <Route path="/buyerDashboard" element={<BuyerDashboard />} />
       </Routes>
     </div>
   );

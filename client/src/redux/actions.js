@@ -29,6 +29,14 @@ export const userRegister = (userData) => {
   };
 };
 
+// export const userLogin = (userData) => {
+//   const endPoint = "http://localhost:3001/user/login";
+//   return async (dispatch) => {
+//     const response = await axios.post(endpoint, userData);
+//     dispatch({ type: USER_LOGIN });
+//   };
+// };
+
 // export const registerBuyer = (buyerData) => {
 //   const endPoint = "http://localhost:3001/buyer/register";
 //   return async (dispatch) => {
