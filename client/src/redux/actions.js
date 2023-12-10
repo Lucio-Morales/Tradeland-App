@@ -1,5 +1,6 @@
 import {
   ALL_PRODUCTS,
+  GET_STORES,
   PRODUCT_BY_CATEGORY,
   USER_REGISTER,
 } from "./action-types";
@@ -26,6 +27,14 @@ export const userRegister = (userData) => {
   return async (dispatch) => {
     const response = await axios.post(endPoint, userData);
     dispatch({ type: USER_REGISTER });
+  };
+};
+
+export const getStores = (sellerId) => {
+  const endpoint = `http://localhost:3001/store/search?sellerId=${sellerId}`;
+  return async (dispatch) => {
+    const response = await axios.get(endpoint);
+    dispatch({ type: GET_STORES, payload: response.data });
   };
 };
 

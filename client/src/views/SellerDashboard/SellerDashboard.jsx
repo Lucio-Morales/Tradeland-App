@@ -1,14 +1,26 @@
 import { useLocation } from "react-router-dom";
-import SellerMenu from "../../components/SellerMenu/SellerMenu";
+import { useDispatch, useSelector } from "react-redux";
+import MyStores from "../MyStores/MyStores";
+import { getStores } from "../../redux/actions";
+import { useEffect } from "react";
 
 const SellerDashboard = () => {
   const location = useLocation();
+  const stores = useSelector((state) => state.stores);
   const userId = location.state ? location.state.userId : null;
-  console.log(userId);
+
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(getStores(userId));
+  }, []);
+
   return (
     <div>
-      <h1>SELLER DASHBOARD</h1>
-      <SellerMenu userId={userId} />
+      <div>
+        <h1>SELLER DASHBOARD</h1>
+        <MyStores stores={stores} />
+      </div>
     </div>
   );
 };
