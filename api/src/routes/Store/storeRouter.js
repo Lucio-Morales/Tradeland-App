@@ -3,6 +3,8 @@ const { storeControllers } = require("../../controllers");
 
 const storeRouter = Router();
 
-storeRouter.post("/create", storeControllers.postStore);
+storeRouter
+  .post("/create", storeControllers.postStore)
+  .get("/search", storeControllers.getStores);
 
 module.exports = storeRouter;

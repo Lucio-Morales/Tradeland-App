@@ -1,11 +1,12 @@
 const { Product, Category } = require("../../db");
 
 // Crea un producto
-const createProduct = async (name, categoryName, price) => {
+const createProduct = async (storeId, name, categoryName, price) => {
   const category = await Category.findOne({ where: { name: categoryName } });
   if (!category) return { mas: "La categoria no existe." };
 
   const product = await Product.create({
+    storeId,
     name,
     categoryId: category.id,
     price,

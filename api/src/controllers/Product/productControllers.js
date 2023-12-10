@@ -3,8 +3,9 @@ const { productServices } = require("../../services");
 // Crea un producto
 const postProduct = async (req, res) => {
   try {
-    const { name, categoryName, price } = req.body;
+    const { storeId, name, categoryName, price } = req.body;
     const response = await productServices.createProduct(
+      storeId,
       name,
       categoryName,
       price

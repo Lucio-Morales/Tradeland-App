@@ -15,4 +15,14 @@ const postStore = async (req, res) => {
   }
 };
 
-module.exports = { postStore };
+const getStores = async (req, res) => {
+  const { sellerId } = req.query;
+  try {
+    const response = await storeServices.searchStores(sellerId);
+    res.status(200).json(response);
+  } catch (error) {
+    res.status(404).json({ error: error.message });
+  }
+};
+
+module.exports = { postStore, getStores };

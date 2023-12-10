@@ -1,5 +1,6 @@
 const { Store } = require("../../db");
 
+//Recibe propiedades y crea una store.
 const createStore = async (userId, name, category, phone) => {
   try {
     const newStore = await Store.create({
@@ -15,4 +16,10 @@ const createStore = async (userId, name, category, phone) => {
   }
 };
 
-module.exports = { createStore };
+//Recibe el id de un seller y busca todas sus stores.
+const searchStores = async (sellerId) => {
+  const stores = await Store.findAll({ where: { sellerId: sellerId } });
+  if (stores) return stores;
+};
+
+module.exports = { createStore, searchStores };
