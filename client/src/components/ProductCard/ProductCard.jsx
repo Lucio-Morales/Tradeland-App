@@ -11,3 +11,6 @@ const ProductCard = ({ name, category, price }) => {
 };
 
 export default ProductCard;
+
+//Funcion del componente:
+//1.Renderizar las propiedades del producto.

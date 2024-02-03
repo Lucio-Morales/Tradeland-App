@@ -22,10 +22,10 @@ export const getProductsByCategory = (categoryId) => {
   };
 };
 
-export const userRegister = (userData) => {
+export const userRegister = (registrationData) => {
   const endPoint = "http://localhost:3001/user/register";
   return async (dispatch) => {
-    const response = await axios.post(endPoint, userData);
+    const response = await axios.post(endPoint, registrationData);
     dispatch({ type: USER_REGISTER });
   };
 };

@@ -3,7 +3,6 @@ import { useDispatch, useSelector } from "react-redux";
 import { getAllProducts } from "../../redux/actions";
 import { useEffect } from "react";
 
-// const url = "http://localhost:3001/product/all";
 const Home = () => {
   const products = useSelector((state) => state.products);
   const dispatch = useDispatch();
@@ -22,6 +21,6 @@ const Home = () => {
 
 export default Home;
 
-//Funcion del componente
-//Renderizar los componentes mas relevantes (NavBar, ProductsViews, Menu)
-//
+//Funcion del componente:
+//1.Despachar action que busca todos los productos.
+//2.Renderizar componente ProductsView pasandole los products.

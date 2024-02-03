@@ -2,12 +2,9 @@ import ProductCard from "../ProductCard/ProductCard";
 import styles from "./ProductsView.module.css";
 
 const ProductsView = ({ products }) => {
-  //Cual es la responsabilidad de este componente?
-  //Mostrar los productos
-
   return (
     <div className={styles.container}>
-      {products &&
+      {products.length &&
         products.map((product) => {
           return (
             <ProductCard
@@ -23,3 +20,6 @@ const ProductsView = ({ products }) => {
 };
 
 export default ProductsView;
+
+//Funcion del componente
+//1. Renderizar componente ProductCard pasandole props.

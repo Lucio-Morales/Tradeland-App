@@ -1,0 +1,20 @@
+/* SelectedType.module.css */
+
+.container {
+  text-align: center;
+}
+
+.buttonContainer {
+  margin-top: 20px;
+}
+
+.button {
+  padding: 10px 20px;
+  margin: 5px;
+  cursor: pointer;
+}
+
+.buttonDisabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}

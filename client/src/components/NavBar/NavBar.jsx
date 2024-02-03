@@ -4,12 +4,15 @@ import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import { getAllProducts, getProductsByCategory } from "../../redux/actions";
+// import { useAuth0 } from "@auth0/auth0-react";
 
 const NavBar = () => {
+  // const { loginWithRedirect } = useAuth0();
   const [categories, setCategories] = useState({
     allCategories: [],
     showCategories: false,
   });
+
   const dispatch = useDispatch();
   useEffect(() => {
     //Cuando se monta el componente NavBar se realiza una peticion al servidor
@@ -28,11 +31,13 @@ const NavBar = () => {
     };
     searchCategories();
   }, []);
+
   const handleCategoryClick = (selectedCategory) => {
     //Esta funcion recibe el id de la categoria seleccionada
     //y despacha una action pasandole ese id
     dispatch(getProductsByCategory(selectedCategory));
   };
+
   const handleGetProducts = () => {
     dispatch(getAllProducts());
   };
@@ -75,9 +80,6 @@ const NavBar = () => {
           )}
         </div>
         <Link to="/register">
-          <button className={styles.button}>REGISTER</button>
-        </Link>
-        <Link to="/login">
           <button className={styles.button}>LOGIN</button>
         </Link>
       </div>
