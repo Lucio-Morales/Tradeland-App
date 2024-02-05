@@ -2,12 +2,11 @@ import "./App.css";
 import { Routes, Route, useLocation } from "react-router-dom";
 import NavBar from "./components/NavBar/NavBar";
 import Home from "./views/Home/Home";
-// import Registration from "./views/Registration/Registration";
 import Login from "./views/Login/Login";
-import SellerDashboard from "./views/SellerDashboard/SellerDashboard";
-import BuyerDashboard from "./views/BuyerDashboard/BuyerDashboard";
 import CreateStore from "./views/CreateStore/CreateStore";
 import UserRegistration from "./views/UserRegistration/UserRegistration";
+import SellerDashboard from "./views/SellerDashboard/SellerDashboard";
+import BuyerDashboard from "./views/BuyerDashboard/BuyerDashboard";
 
 function App() {
   const location = useLocation();
@@ -19,9 +18,9 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/register" element={<UserRegistration />} />
         <Route path="/login" element={<Login />} />
-        <Route path="/sellerDashboard" element={<SellerDashboard />} />
         <Route path="/createStore/:id" element={<CreateStore />} />
-        <Route path="/buyerDashboard" element={<BuyerDashboard />} />
+        <Route path="/seller-dashboard" element={<SellerDashboard />} />
+        <Route path="/buyer-dashboard" element={<BuyerDashboard />} />
       </Routes>
     </div>
   );

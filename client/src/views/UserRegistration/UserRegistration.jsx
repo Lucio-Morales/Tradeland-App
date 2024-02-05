@@ -1,8 +1,12 @@
 import { useState } from "react";
 import SelectUserType from "../../components/SelectUserType/SelectUserType";
 import UserData from "../../components/UserData/UserData";
+import LoadingData from "../../components/Loading/Loading";
+import { useNavigate } from "react-router-dom";
 
 const UserRegistration = () => {
+  const navigate = useNavigate();
+
   const [registrationData, setRegistrationData] = useState({
     registrationPhase: 0,
     userType: "",
@@ -25,6 +29,7 @@ const UserRegistration = () => {
           registrationData={registrationData}
         />
       )}
+      {registrationData.registrationPhase === 2 && <LoadingData />}
     </div>
   );
 };

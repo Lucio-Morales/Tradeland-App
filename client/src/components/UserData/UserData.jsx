@@ -1,9 +1,10 @@
-import { useDispatch } from "react-redux";
-import { userRegister } from "../../redux/actions";
+// import { useDispatch } from "react-redux";
+// import { userRegister } from "../../redux/actions";
+
+import { postUser } from "../../views/UserForm/postUser";
 
 const UserData = ({ registrationData, setRegistrationData }) => {
-  const dispatch = useDispatch();
-
+  //Almaceno los datos del usuario
   const handleUserData = (event) => {
     setRegistrationData({
       ...registrationData,
@@ -14,7 +15,15 @@ const UserData = ({ registrationData, setRegistrationData }) => {
   const handleSubmit = (event) => {
     event.preventDefault();
 
-    dispatch(userRegister(registrationData));
+    //Mientras se realice la solicitud al servidor para registrar al usuario
+    //registrationPhase debe estar en 2, una vez reciba la confirmacion de registro
+    //del servidor, registrationPhase : 3
+    setRegistrationData({
+      ...registrationData,
+      registrationPhase: 2,
+    });
+
+    postUser(registrationData, setRegistrationData);
   };
 
   return (

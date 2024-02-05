@@ -1,12 +1,15 @@
 import styles from "./SelectUserType.module.css";
 
 const SelectUserType = ({ registrationData, setRegistrationData }) => {
+  //Almaceno el userType en el estado local de UserRegistration
   const handleUserType = (userType) => {
     setRegistrationData({
       ...registrationData,
       userType: userType,
     });
   };
+
+  //Seteo registrationPhase para que UserRegistration se re-renderice
   const handleNext = () => {
     setRegistrationData({
       ...registrationData,
