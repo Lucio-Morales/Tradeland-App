@@ -3,6 +3,7 @@ import SelectUserType from "../../components/SelectUserType/SelectUserType";
 import UserData from "../../components/UserData/UserData";
 import LoadingData from "../../components/Loading/Loading";
 import { useNavigate } from "react-router-dom";
+import Home from "../Home/Home";
 
 const UserRegistration = () => {
   const navigate = useNavigate();
@@ -30,6 +31,7 @@ const UserRegistration = () => {
         />
       )}
       {registrationData.registrationPhase === 2 && <LoadingData />}
+      {registrationData.registrationPhase === 3 && <Home />}
     </div>
   );
 };

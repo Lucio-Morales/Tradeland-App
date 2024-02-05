@@ -1,7 +1,5 @@
-// import { useDispatch } from "react-redux";
-// import { userRegister } from "../../redux/actions";
-
 import { postUser } from "../../views/UserForm/postUser";
+import styles from "./UserData.module.css";
 
 const UserData = ({ registrationData, setRegistrationData }) => {
   //Almaceno los datos del usuario
@@ -27,9 +25,10 @@ const UserData = ({ registrationData, setRegistrationData }) => {
   };
 
   return (
-    <div>
-      <form>
+    <div className={styles.formContainer}>
+      <form className={styles.form}>
         <input
+          className={styles.input}
           name="name"
           value={registrationData.name}
           type="text"
@@ -37,6 +36,7 @@ const UserData = ({ registrationData, setRegistrationData }) => {
           onChange={handleUserData}
         />
         <input
+          className={styles.input}
           name="email"
           value={registrationData.email}
           type="text"
@@ -44,13 +44,16 @@ const UserData = ({ registrationData, setRegistrationData }) => {
           onChange={handleUserData}
         />
         <input
+          className={styles.input}
           name="password"
           value={registrationData.password}
           type="password"
           placeholder="Password"
           onChange={handleUserData}
         />
-        <button onClick={handleSubmit}>Submit</button>
+        <button className={styles.submitButton} onClick={handleSubmit}>
+          Submit
+        </button>
       </form>
     </div>
   );
